@@ -3,10 +3,8 @@
 <h1 class="heading">Dashboard</h1>
 <% for(let hive of hives) {%>
     <li>
-        <%= hive.name %>
-        <%= hive.createdDate %>
+        <a href="/hives/<%= hive._id %>"><%= hive.name %></a>
         <%= hive.inspections %>
-        <a href="/hives/<%= hive._id %>/edit">Edit</a>
     </li>
 <% } %>
 <a href="/hives/new">Add a Hive</a>

@@ -7,10 +7,10 @@
     <title>Edit Hive</title>
 </head>
 <body>
-    <form action="/hives" method="POST">
+    <form action="/hives/<%= hive._id %>?_method=PUT" method="post">
         <label for="name">Hive Name</label>
-        <input type="text" name="name" id="hiveName">
-        <button type="submit">Add</button>
+        <input type="text" name="name" id="hiveName" value="<%= hive.name %>">
+        <button type="submit">Save</button>
     </form>
 </body>
 </html>

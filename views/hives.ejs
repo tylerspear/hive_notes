@@ -1,0 +1,14 @@
+<!-- header -->
+<%- include('partials/header') %>
+<h1 class="heading">Dashboard</h1>
+<% for(let hive of hives) {%>
+    <li>
+        <%= hive.name %>
+        <%= hive.createdDate %>
+        <%= hive.inspections %>
+        <a href="/hives/<%= hive._id %>/edit">Edit</a>
+    </li>
+<% } %>
+<a href="/hives/new">Add a Hive</a>
+<!-- footer -->
+<%- include('partials/footer') %>

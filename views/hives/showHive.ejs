@@ -1,0 +1,158 @@
+<!-- header -->
+<%- include('../partials/header') %>
+
+<h1 class="heading"><%= hive.name %></h1>
+
+<a href="/hives/<%= hive._id %>/edit">Edit Hive</a>
+
+<form action="/hives/<%= hive._id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete</button>
+</form>
+
+<button>Add Inspection</button>
+
+<h3>Inspection Log</h3>
+<form action="/hives/<%= hive._id %>/inspection?_method=PUT" method="post">
+        <div class="">
+            <h3 access="false" id="control-7927770">General</h3></div>
+        <div class="formbuilder-date form-group field-inspection-date">
+            <label for="inspection-date" class="formbuilder-date-label">Inspection Date<span class="formbuilder-required">*</span></label>
+            <input type="date" name="inspection-date" access="false" id="inspection-date" required="required" aria-required="true">
+        </div>
+        <div class="formbuilder-select form-group field-inspection-time">
+            <label for="inspection-time" class="formbuilder-select-label">Time of Inspection<span class="formbuilder-required">*</span></label>
+            <select name="inspection-time" id="inspection-time" required="required" aria-required="true">
+                <option value="morning" selected="true" id="inspection-time-0">Morning</option>
+                <option value="afternoon" id="inspection-time-1">Afternoon</option>
+                <option value="evening" id="inspection-time-2">Evening</option>
+            </select>
+        </div>
+        <div class="formbuilder-select form-group field-inspection-weather">
+            <label for="inspection-weather" class="formbuilder-select-label">Weather Conditions</label>
+            <select name="inspection-weather" id="inspection-weather">
+                <option value="sunny" selected="true" id="inspection-weather-0">Sunny</option>
+                <option value="cloudy" id="inspection-weather-1">Cloudy</option>
+                <option value="rainy" id="inspection-weather-2">Rainy</option>
+                <option value="overcast" id="inspection-weather-3">Overcast</option>
+            </select>
+        </div>
+        <div class="">
+            <h3 access="false" id="control-6119253">Appearance</h3></div>
+        <div class="formbuilder-radio-group form-group field-inspection-activity">
+            <label for="inspection-activity" class="formbuilder-radio-group-label">Activity Level</label>
+            <div class="radio-group">
+                <div class="formbuilder-radio">
+                    <input name="inspection-activity" access="false" id="inspection-activity-0" value="high-activity" type="radio" checked="checked">
+                    <label for="inspection-activity-0">High Activity</label>
+                </div>
+                <div class="formbuilder-radio">
+                    <input name="inspection-activity" access="false" id="inspection-activity-1" value="moderate-activity" type="radio">
+                    <label for="inspection-activity-1">Moderate Activity</label>
+                </div>
+                <div class="formbuilder-radio">
+                    <input name="inspection-activity" access="false" id="inspection-activity-2" value="little-activity" type="radio">
+                    <label for="inspection-activity-2">Little Activity</label>
+                </div>
+                <div class="formbuilder-radio">
+                    <input name="inspection-activity" access="false" id="inspection-activity-3" value="no-activity" type="radio">
+                    <label for="inspection-activity-3">No Activity</label>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <h3 access="false" id="control-5294088">Reproduction</h3></div>
+        <div class="formbuilder-radio-group form-group field-inspection-brood">
+            <label for="inspection-brood" class="formbuilder-radio-group-label">Is the brood pattern good?</label>
+            <div class="radio-group">
+                <div class="formbuilder-radio">
+                    <input name="inspection-brood" access="false" id="inspection-brood-0" value="yes" type="radio">
+                    <label for="inspection-brood-0">Yes</label>
+                </div>
+                <div class="formbuilder-radio">
+                    <input name="inspection-brood" access="false" id="inspection-brood-1" value="no" type="radio">
+                    <label for="inspection-brood-1">No</label>
+                </div>
+            </div>
+        </div>
+        <div class="formbuilder-radio-group form-group field-inspection-larvae">
+            <label for="inspection-larvae" class="formbuilder-radio-group-label">Are larvae healthy, white, and shiny?</label>
+            <div class="radio-group">
+                <div class="formbuilder-radio">
+                    <input name="inspection-larvae" access="false" id="inspection-larvae-0" value="yes" type="radio">
+                    <label for="inspection-larvae-0">Yes</label>
+                </div>
+                <div class="formbuilder-radio">
+                    <input name="inspection-larvae" access="false" id="inspection-larvae-1" value="no" type="radio">
+                    <label for="inspection-larvae-1">No</label>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <h3 access="false" id="control-1920828">Pests</h3></div>
+        <div class="formbuilder-checkbox-group form-group field-inspection-pests">
+            <label for="inspection-pests" class="formbuilder-checkbox-group-label">Are there pests present?</label>
+            <div class="checkbox-group">
+                <div class="formbuilder-checkbox">
+                    <input name="inspection-pests[]" access="false" id="inspection-pests-0" value="ants" type="checkbox">
+                    <label for="inspection-pests-0">Ants</label>
+                </div>
+                <div class="formbuilder-checkbox">
+                    <input name="inspection-pests[]" access="false" id="inspection-pests-1" value="mites" type="checkbox">
+                    <label for="inspection-pests-1">Mites</label>
+                </div>
+                <div class="formbuilder-checkbox">
+                    <input name="inspection-pests[]" access="false" id="inspection-pests-2" value="wax-moths" type="checkbox">
+                    <label for="inspection-pests-2">Wax Moths</label>
+                </div>
+            </div>
+        </div>
+        <div class="formbuilder-radio-group form-group field-inspection-dead-bees">
+            <label for="inspection-dead-bees" class="formbuilder-radio-group-label">Are there an unusual number of dead bees?</label>
+            <div class="radio-group">
+                <div class="formbuilder-radio">
+                    <input name="inspection-dead-bees" access="false" id="inspection-dead-bees-0" value="yes" type="radio">
+                    <label for="inspection-dead-bees-0">Yes</label>
+                </div>
+                <div class="formbuilder-radio">
+                    <input name="inspection-dead-bees" access="false" id="inspection-dead-bees-1" value="no" type="radio">
+                    <label for="inspection-dead-bees-1">No</label>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <h3 access="false" id="control-3057123">Capacity</h3></div>
+        <div class="formbuilder-number form-group field-number-1659114380359">
+            <label for="number-1659114380359" class="formbuilder-number-label">Number</label>
+            <input type="number" class="form-control" name="number-1659114380359" access="false" id="number-1659114380359">
+        </div>
+        <div class="formbuilder-number form-group field-number-1659114390067">
+            <label for="number-1659114390067" class="formbuilder-number-label">Number</label>
+            <input type="number" class="form-control" name="number-1659114390067" access="false" id="number-1659114390067">
+        </div>
+        <div class="">
+            <h3 access="false" id="control-7789723">Details</h3></div>
+        <div class="formbuilder-radio-group form-group field-inspection-population">
+            <label for="inspection-population" class="formbuilder-radio-group-label">Has there been a decrease in population since last inspection?</label>
+            <div class="radio-group">
+                <div class="formbuilder-radio">
+                    <input name="inspection-population" access="false" id="inspection-population-0" value="yes" type="radio">
+                    <label for="inspection-population-0">Yes</label>
+                </div>
+                <div class="formbuilder-radio">
+                    <input name="inspection-population" access="false" id="inspection-population-1" value="no" type="radio">
+                    <label for="inspection-population-1">No</label>
+                </div>
+            </div>
+        </div>
+        <div class="formbuilder-textarea form-group field-inspection-notes">
+            <label for="inspection-notes" class="formbuilder-textarea-label">Additional Notes</label>
+            <textarea type="textarea" class="form-control" name="inspection-notes" access="false" id="inspection-notes"></textarea>
+        </div>
+        <div class="">
+            <button type="submit" class="btn-default btn" access="false" id="control-5271614">Submit</button>
+        </div>
+</form>
+
+<a href="/hives">Back To Dashboard</a>
+<!-- footer -->
+<%- include('../partials/footer') %>

@@ -1,0 +1,13 @@
+@import '../utilities/variables';
+
+.side-nav {
+    min-height: 100vh;
+    background-color: #efefef;
+
+    .side-nav__link {
+        color: $grey;
+        text-decoration: none;
+        font-size: 1.25rem;
+    }
+}
+

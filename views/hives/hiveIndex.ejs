@@ -1,11 +1,35 @@
 <!-- header -->
 <%- include('../partials/header') %>
-<h1 class="heading">Dashboard</h1>
-<% for(let hive of hives) {%>
-    <li>
-        <a href="/hives/<%= hive._id %>"><%= hive.name %></a>
-    </li>
-<% } %>
-<a href="/hives/new">Add a Hive</a>
+<section class="container-lg">
+    <div class="row">
+        <aside class="side-nav col col-3 pt-3 ps-3">
+            <div class="d-flex flex-column">
+                <a href="#" class="logo mb-4">Hive<span>Notes</span></a>
+                <div class="d-flex flex-column">
+                    <a href="#" class="side-nav__link my-2">Settings</a>
+                    <a href="#" class="side-nav__link my-2">Account</a>
+                </div>
+            </div>
+        </aside>
+        <section class="col col-9 pt-3 ps-4">
+            <h3 class="heading">Hive Dashboard</h3>
+            <div class="card-deck row">
+                <% for(let hive of hives) {%>
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <a href="/hives/<%= hive._id %>" class="card-title"><%= hive.name %></a>
+                                <a href="#" class="btn btn-primary">Log Inspection</a>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+
+            <a href="/hives/new" class="btn">Add a Hive</a>
+        </section>
+    </div>
+</section>
+
 <!-- footer -->
 <%- include('../partials/footer') %>

@@ -1,0 +1,16 @@
+@import '../utilities/variables';
+
+.logo {
+    font-size: 2rem;
+    font-family: $heading;
+    text-decoration: none;
+    color: $yellow;
+
+    &:hover {
+        color: $yellow;
+    }
+
+    span {
+        color: #000;
+    }
+}

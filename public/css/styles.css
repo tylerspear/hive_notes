@@ -1,11 +1,22 @@
 .side-nav {
   min-height: 100vh;
-  background-color: #efefef;
+  background-color: #F7F7F7;
 }
 .side-nav .side-nav__link {
-  color: #3A3637;
+  color: #222222;
   text-decoration: none;
   font-size: 1.25rem;
+}
+
+.hive-dashboard {
+  background-color: #fff;
+}
+
+.hive-status {
+  font-size: 0.75rem;
+}
+.hive-status span {
+  font-weight: bold;
 }
 
 .logo {
@@ -19,6 +30,36 @@
 }
 .logo span {
   color: #000;
+}
+
+.card {
+  border: 1px solid #222222;
+  background-color: #fff;
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__title {
+  font-size: 1.25rem;
+  color: #222222;
+  text-decoration: none;
+}
+.card__title:hover {
+  color: #F3C622;
+}
+
+.btn {
+  background-color: #F7F7F7;
+  color: #222222;
+  border: 1px solid #222222;
+}
+.btn:hover {
+  background-color: #F3C622;
+  color: #222222;
+  border: 1px solid #222222;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -87,6 +128,7 @@ table {
 body {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
+  color: #222222 !important;
 }
 
 /*# sourceMappingURL=styles.css.map */

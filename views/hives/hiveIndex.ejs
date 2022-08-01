@@ -12,21 +12,40 @@
             </div>
         </aside>
         <section class="col col-9 pt-3 ps-4">
-            <h3 class="heading">Hive Dashboard</h3>
-            <div class="card-deck row">
-                <% for(let hive of hives) {%>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <a href="/hives/<%= hive._id %>" class="card-title"><%= hive.name %></a>
-                                <a href="#" class="btn btn-primary">Log Inspection</a>
+            <div class="hive-dashboard">
+            <h3 class="subheading mb-2">Hive Dashboard</h3>
+                <div class="row">
+                    <% for(let hive of hives) {%>
+                        <div class="col-md-4 col-sm-12 my-2">
+                            <div class="card">
+                                <div class="card__body">
+                                    <a href="/hives/<%= hive._id %>" class="card__title my-3 text-center"><%= hive.name %></a>
+                                    <div class="hive-status d-flex flex-column px-2 text-center">
+                                        <div class="hive-health mb-1">
+                                            <p>Health: <span>Good</span></p>
+                                        </div>
+                                        <div class="hive-last-inspected">
+                                            <p>Last Inspected: <span>8/1/2022</span></p>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="btn btn-primary mx-5 mt-3">New Inspection</a>
+                                    <a href="#" class="btn btn-primary mx-5 mt-2 mb-3">Inspection History</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    <% } %>
+                </div>
+
+                <a href="/hives/new" class="btn mt-2">Add a Hive</a>
+            </div>
+            <div class="inspection-log mt-5">
+                <h3 class="subheading mb-2">Recent Inspections</h3>
+                <% for(let hive of hives) { %>
+                    <% for(let inspection of hive.inspections) { %>
+                        <h3><%= inspection.date %></h3>
+                    <% } %>
                 <% } %>
             </div>
-
-            <a href="/hives/new" class="btn">Add a Hive</a>
         </section>
     </div>
 </section>

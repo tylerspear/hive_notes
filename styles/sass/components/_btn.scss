@@ -1,0 +1,13 @@
+@import '../utilities/variables';
+
+.btn {
+    background-color: $light-grey;
+    color: $black;
+    border: 1px solid $black;
+
+    &:hover {
+        background-color: $yellow;
+        color: $black;
+        border: 1px solid $black;
+    }
+}

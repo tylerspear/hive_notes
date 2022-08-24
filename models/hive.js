@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+
 const hiveSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -14,4 +15,4 @@ const hiveSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('HiveSchema', hiveSchema, 'hives')
+module.exports = mongoose.model('Hive', hiveSchema)

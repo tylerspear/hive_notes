@@ -35,17 +35,6 @@ app.use('/', mainRoutes)
 //Hive routes
 app.use('/hives', hiveRoutes)
 
-// //SERVE THE NEW HIVE FORM
-// app.get('/hives/new', (req, res) => {
-//     res.render('hives/newHive')
-// })
-
-// //ADD A NEW HIVE (NEW HIVE FORM ENDPOINT)
-// app.post('/hives', async (req, res) => {
-//     const newHive = new Hive(req.body)
-//     await newHive.save()
-//     res.redirect('/hives')
-// })
 
 // //SHOW SINGLE HIVE
 // app.get('/hives/:id', async (req, res) => {

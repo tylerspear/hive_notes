@@ -2,7 +2,6 @@ const Hive = require('../models/Hive')
 
 module.exports = {
     getHives: async (req, res) => {
-        console.log('in controller')
         try {
             const hives = await Hive.find({})
             res.render('hives/hiveIndex', { hives })
@@ -10,5 +9,18 @@ module.exports = {
         catch(err){
             console.error(err)
         }
-    }
+    },
+    newHive: (req, res) => {
+        res.render('hives/newHive')
+    },
+    addHive: async (req, res) => {
+        try {
+            const newHive = new Hive(req.body)
+            await newHive.save()
+            res.redirect('/hives')
+        }
+        catch (err) {
+            console.log(err)
+        }
+    },
 }

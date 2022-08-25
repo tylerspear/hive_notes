@@ -6,8 +6,10 @@ const path = require('path')
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 require('dotenv').config()
+
 const mainRoutes = require('./routes/main')
 const hiveRoutes = require('./routes/hive')
+
 const connectDB = require('./config/database')
 
 // ********* MIDDLEWARE *********
@@ -26,22 +28,12 @@ app.use(express.json())
 // ********* DATABASE *********
 connectDB()
 
-//HIVE SCHEMA
-const Hive = require('./models/hive')
-
-
 // ********* ROUTES *********
-//HOME
-// app.get('/', (req, res) => {
-//     res.render('index')
-// })
-app.get('/', mainRoutes)
+//Home Route
+app.use('/', mainRoutes)
 
-// //ALL HIVES
-app.get('/hives', async (req, res) => {
-    const hives = await Hive.find({})
-    res.render('hives/hiveIndex', { hives })
-})
+//Hive routes
+app.use('/hives', hiveRoutes)
 
 // //SERVE THE NEW HIVE FORM
 // app.get('/hives/new', (req, res) => {
